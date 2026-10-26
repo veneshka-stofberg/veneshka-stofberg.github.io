@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Veneshka — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c8102e; --paper:#f3ecdf; --ink:#1a1210; --teal:#0f3b3a; --glow:#ffb36b;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--paper:#1c1714;--ink:#f3ecdf}
+}
+:root[data-theme="dark"]{--paper:#1c1714;--ink:#f3ecdf}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--red)}
+body{font-family:var(--sans);background:var(--red);color:#fff;overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;
+  padding:calc(env(safe-area-inset-top,0px) + 18px) 24px 0;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;mix-blend-mode:difference;color:#fff}
+section{position:relative}
+.hero{height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--red)}
+.hero h1{font-weight:800;font-size:clamp(3rem,17vw,20rem);line-height:.9;letter-spacing:-.05em;text-align:center;z-index:1;text-transform:uppercase}
+.hero h1 span{display:block;overflow:hidden;padding:.04em 0}
+.hero h1 i{display:block;font-style:normal}
+.meta{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;z-index:6}
+.meta.l{left:24px}.meta.r{right:24px}
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.marquee div{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.story{height:300vh;background:var(--paper);color:var(--ink)}
+.stick{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;padding:0 8vw}
+.stick p{font-family:var(--serif);font-size:clamp(2.4rem,7vw,6.5rem);line-height:1.02;max-width:11em;letter-spacing:-.02em}
+.stick .w{opacity:.14;display:inline-block;margin-right:.22em}
+.stick em{font-style:italic}
+.projects{background:var(--paper);color:var(--ink);padding:16vh 8vw;min-height:100vh}
+.projects h3{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,4rem);margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;max-width:62rem}
+.card{border:1px solid color-mix(in srgb,var(--ink) 25%,transparent);border-radius:20px;padding:28px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--red)}
+.card .n{font-size:.8rem;letter-spacing:.1em;opacity:.6}
+.card h4{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);margin:14px 0 10px;line-height:1.05}
+.card p{line-height:1.5;opacity:.85;margin-bottom:20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags b{font-weight:500;font-size:.75rem;border:1px solid currentColor;border-radius:99px;padding:5px 12px}
+.sub{margin-top:20px;opacity:.85}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end;margin-top:28px}
+.links .btn{margin-top:0}
+.outro{min-height:100vh;min-height:100svh;background:var(--teal);color:#f3ecdf;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;padding:12vh 8vw}
+.outro h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,8vw,7rem);line-height:.98;max-width:9em}
+.outro h2 em{color:var(--glow)}
+.btn{margin-top:36px;display:inline-block;border:1px solid currentColor;border-radius:99px;padding:14px 28px;color:inherit;text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn:hover{background:#f3ecdf;color:var(--teal)}
+@media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<nav><span>Veneshka</span><span>Work · Contact</span></nav>
+
+<main>
+  <section class="hero">
+    <h1 aria-label="Veneshka"><span><i>Veneshka</i></span></h1>
+    <div class="meta l">Software engineer · BSc IT</div>
+    <div class="meta r">Scroll ↓</div>
+  </section>
+
+  <div class="marquee"><div>Java ✦ C++ ✦ Kotlin ✦ JavaScript ✦ PHP ✦ MySQL ✦ HTML/CSS ✦ Linux ✦ Java ✦ C++ ✦ Kotlin ✦ JavaScript ✦ PHP ✦ MySQL ✦ HTML/CSS ✦ Linux ✦ Java ✦ C++ ✦ Kotlin ✦ JavaScript ✦ PHP ✦ MySQL ✦ HTML/CSS ✦ Linux ✦ Java ✦ C++ ✦ Kotlin ✦ JavaScript ✦ PHP ✦ MySQL ✦ HTML/CSS ✦ Linux ✦ &nbsp;</div></div>
+
+  <section class="story" id="story">
+    <div class="stick"><p id="reveal">Junior software engineer, <em>building things people actually use.</em></p></div>
+  </section>
+
+  <section class="projects" id="work">
+    <h3>Selected work</h3>
+    <div class="grid">
+      <article class="card">
+        <span class="n">01</span>
+        <h4>E-commerce marketplace</h4>
+        <p>A full online marketplace built from scratch: product listings, accounts and a MySQL-backed catalogue.</p>
+        <div class="tags"><b>PHP</b><b>MySQL</b><b>HTML/CSS</b></div>
+      </article>
+      <article class="card">
+        <span class="n">02</span>
+        <h4>AI student learning platform</h4>
+        <p>Final-year group project: a learning platform that uses AI to support students. Built in Java as part of a team.</p>
+        <div class="tags"><b>Java</b><b>AI</b><b>Team project</b></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="outro">
+    <h2>Graduating Dec 2026. <em>Let’s build something.</em></h2>
+    <p class="sub">Open to graduate and junior software engineer roles.</p>
+    <div class="links"><a class="btn" href="mailto:veneshkastofberg@icloud.com">veneshkastofberg@icloud.com</a><a class="btn" href="https://github.com/veneshka-stofberg">GitHub</a><a class="btn" href="https://linkedin.com/in/veneshka-stofberg">LinkedIn</a></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  gsap.registerPlugin(ScrollTrigger);
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- split the story headline into words ---------- */
+  var p = document.getElementById('reveal');
+  (function split(node){
+    Array.from(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        var frag=document.createDocumentFragment();
+        n.textContent.split(/\s+/).filter(Boolean).forEach(function(t){
+          var s=document.createElement('span'); s.className='w'; s.textContent=t; frag.appendChild(s);
+        });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1){ split(n); }
+    });
+  })(p);
+
+  /* ---------- hero entrance ---------- */
+  gsap.from('.hero h1 i',{yPercent:110,duration:1.2,ease:'expo.out',stagger:.12,delay:.2});
+  gsap.from('.meta,nav',{opacity:0,duration:1,delay:.9});
+  gsap.to('.hero h1',{yPercent:-22,ease:'none',
+    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  /* ---------- story: words light up as you scroll ---------- */
+  gsap.to('#reveal .w',{opacity:1,stagger:.12,ease:'none',
+    scrollTrigger:{trigger:'#story',start:'top 30%',end:'bottom bottom',scrub:true}});
+
+  /* ---------- 3D object ---------- */
+  var canvas=document.getElementById('gl'), renderer;
+  try{
+    renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  }catch(e){ canvas.style.display='none'; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+
+  var scene=new THREE.Scene();
+  var cam=new THREE.PerspectiveCamera(40,1,.1,100); cam.position.z=7;
+  scene.add(new THREE.AmbientLight(0xffffff,.55));
+  var key=new THREE.DirectionalLight(0xffffff,1.1); key.position.set(3,4,5); scene.add(key);
+  var rim=new THREE.PointLight(0xffb36b,1.3,25); rim.position.set(-4,-2,3); scene.add(rim);
+
+  // crumpled, origami-like polyhedron: deterministic noise so shared vertices stay joined
+  var geo=new THREE.IcosahedronGeometry(1.5,1);
+  var pos=geo.attributes.position;
+  for(var i=0;i<pos.count;i++){
+    var x=pos.getX(i),y=pos.getY(i),z=pos.getZ(i);
+    var d=1+.16*Math.sin(x*4.1+z*2.3)*Math.cos(y*3.7+x*1.9)+.06*Math.sin(z*9.0+y*5.0);
+    pos.setXYZ(i,x*d,y*d,z*d);
+  }
+  geo.computeVertexNormals();
+
+  var mat=new THREE.MeshStandardMaterial({color:0xf3e3c3,flatShading:true,roughness:.5,metalness:.2});
+  var mesh=new THREE.Mesh(geo,mat);
+  mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo,1),
+    new THREE.LineBasicMaterial({color:0x2a1a12,transparent:true,opacity:.3})));
+  var group=new THREE.Group(); group.add(mesh); scene.add(group);
+
+  var S={x:0,y:0,s:1,ry:0,rx:0}, mouse={x:0,y:0,tx:0,ty:0}, halfW=2.5, halfH=2.5;
+
+  function resize(){
+    var w=window.innerWidth,h=window.innerHeight;
+    renderer.setSize(w,h,false);
+    cam.aspect=w/h; cam.updateProjectionMatrix();
+    halfH=Math.tan(THREE.MathUtils.degToRad(cam.fov/2))*cam.position.z;
+    halfW=halfH*cam.aspect;
+    group.userData.base=Math.min(1.15,Math.max(.6,w/1000));
+  }
+  window.addEventListener('resize',resize); resize();
+
+  window.addEventListener('pointermove',function(e){
+    mouse.tx=(e.clientX/window.innerWidth-.5)*2;
+    mouse.ty=(e.clientY/window.innerHeight-.5)*2;
+  },{passive:true});
+
+  /* scroll timeline: object travels and recolours between sections */
+  function C(hex){var c=new THREE.Color(hex);return {r:c.r,g:c.g,b:c.b};}
+  var tl=gsap.timeline({scrollTrigger:{trigger:'main',start:'top top',end:'bottom bottom',scrub:1}});
+  tl.to(S,{x:.5,y:-.05,s:.9,ry:3.2,rx:.4,duration:1,ease:'none'},0)
+    .to(mat.color,Object.assign(C('#c8102e'),{duration:1,ease:'none'}),0)
+    .to(S,{x:.8,y:-.55,s:.45,ry:6.4,rx:-.2,duration:1,ease:'none'},1)
+    .to(S,{x:-.5,y:0,s:1.1,ry:9.6,rx:.2,duration:1,ease:'none'},2)
+    .to(mat.color,Object.assign(C('#ffb36b'),{duration:1,ease:'none'}),2);
+
+  gsap.from('.card',{y:60,opacity:0,duration:.9,stagger:.15,ease:'power3.out',
+    scrollTrigger:{trigger:'.projects',start:'top 65%'}});
+
+  var t0=performance.now();
+  (function loop(now){
+    var t=(now-t0)/1000;
+    mouse.x+=(mouse.tx-mouse.x)*.06; mouse.y+=(mouse.ty-mouse.y)*.06;
+    var spin=reduce?0:t*.25;
+    group.position.set(S.x*halfW*.6+mouse.x*.25, -S.y*halfH+(reduce?0:Math.sin(t*1.2)*.08)-mouse.y*.15, 0);
+    var sc=S.s*(group.userData.base||1); group.scale.set(sc,sc,sc);
+    group.rotation.set(S.rx+mouse.y*.35, S.ry+spin+mouse.x*.5, 0);
+    renderer.render(scene,cam);
+    requestAnimationFrame(loop);
+  })(t0);
+
+  // intro pop-in
+  gsap.from(S,{s:0,duration:1.4,ease:'elastic.out(1,.6)',delay:.5});
+})();
+</script>
+</body>
+</html>
